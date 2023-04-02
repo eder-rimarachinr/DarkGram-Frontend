@@ -1,0 +1,51 @@
+<div class="flex justify-end mb-4">
+  <button class="bg-gray-200 hover:bg-gray-300 rounded-full p-2 mr-2 focus:outline-none" (click)="setView('grid')">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+      <path d="M4 5v5h5V5H4zm0 7v5h5v-5H4zm7 0v5h5v-5h-5zm0-7v5h5V5h-5zm7 7v5h5v-5h-5zm0-7v5h5V5h-5z" />
+    </svg>
+  </button>
+  <button class="bg-gray-200 hover:bg-gray-300 rounded-full p-2 focus:outline-none" (click)="setView('list')">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+      <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+    </svg>
+  </button>
+</div>
+
+
+<div class="flex justify-center flex-wrap gap-4" *ngIf="view === 'grid'">
+  <div *ngFor="let product of products">
+    <div class="h-full flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+      <img class="object-cover  h-auto rounded-t-lg md:h-60 md:w-60 md:rounded-none md:rounded-l-lg" [attr.src]="product.imgUrl ? product.imgUrl : PH_JULIAN" max-width="300px" alt="">
+      <div class="flex flex-col justify-between p-4 leading-normal lg:min-w-0">
+        <h5 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          Categoria: {{product.category}}
+          Precio: $/. {{ product.price }}
+        </h5>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 lg:min-w-0">
+          <b><i>Creador by {{product.user.username}} </i></b>
+          Here are the biggest enterprise technology
+          acquisitions of 2021 so far, in reverse chronological order.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="grid grid-cols-1 gap-4 max-w-6xl mx-auto" *ngIf="view === 'list'">
+  <div *ngFor="let product of products">
+    <div class="flex items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+      <img class="object-cover w-32 h-32 rounded-l-lg" [attr.src]="product.imgUrl ? product.imgUrl : PH_JULIAN" alt="">
+      <div class="flex flex-col p-4 leading-normal">
+        <h5 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          Categoria: {{product.category}}
+          Precio: $/. {{ product.price }}
+        </h5>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 lg:min-w-0">
+          <b><i>Creador by {{product.user.username}} </i></b>
+          Here are the biggest enterprise technology
+          acquisitions of 2021 so far, in reverse chronological order.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

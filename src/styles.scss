@@ -1,0 +1,49 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --fontFamily1: "Signika", Arial, Helvetica, sans-serif;
+  --fontFamily2: "Urwdin", Arial, Helvetica, sans-serif;
+  --fontFamily3: "Anton", Arial, Helvetica, "sans-serif";
+  --fontFamily4: "Source Code Pro", monospace;
+  --primary-color: #14b789;
+  --violet-color: #9f00ff;
+  --violet-secondary: #e0adff;
+  --secondary-color: rgba(0, 0, 0, 0.025);
+  --white-color: #fff;
+  --green-color: #23989e;
+  --white-ligth-color: #f0f8ff;
+  --black: #171925;
+  --gray: #f4f4f7;
+  --orange-color: #f49f0a;
+  --tangerine-color: #f08700;
+  --sea-ligth-color: #14b789;
+  --surface-color: #fff;
+  --curve: 40;
+  --border-radius-large: 100px;
+  --border-radius-medium: 20px;
+  --border-radius-small: 10px;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+}
+
+* {
+  font-family: var(--fontFamily);
+  font-size: 16px;
+}
+
+
+body {
+  background-color: var(--whiteColor);
+  padding: 0;
+  margin: 0;
+  min-width: 250px;
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,69 @@
+<nav
+  class="relative flex w-full flex-wrap items-center justify-between bg-neutral-900 py-3 text-neutral-200 shadow-lg lg:flex-wrap lg:justify-start"
+  data-te-navbar-ref>
+  <div class="flex w-full flex-wrap items-center justify-between px-6">
+    <!-- <button href="#navbarSupportedContent4" class="block border-0 bg-transparent py-2 px-2.5 text-neutral-200 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 lg:hidden">
+      <span class="[&>svg]:w-7">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7">
+          <path fill-rule="evenodd"
+            d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+            clip-rule="evenodd" />
+        </svg>
+      </span>
+    </button> -->
+    <div class="relative flex items-center flex-row" id="navbarSupportedContent4">
+      <!-- contenido a desplegar -->
+      <a class="pr-2 text-xl font-semibold text-white" href="#">SimpleJWT</a>
+      <!-- Left links -->
+      <ul class="list-style-none mr-auto flex pl-0" data-te-navbar-nav-ref>
+        <li class="p-2" data-te-nav-item-ref>
+          <a class="p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80" routerLink="/products" routerLinkActive="active" data-te-nav-link-ref>
+            Products
+          </a>
+        </li>
+        <li class="p-2" data-te-nav-item-ref>
+          <a class="p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80" routerLink="/private" routerLinkActive="active" data-te-nav-link-ref>
+            Private
+          </a>
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+
+    <!-- Right elements -->
+    <div class="relative flex items-center flex-row ">
+      <ul class="list-style-none mr-auto flex pl-0" data-te-navbar-nav-ref>
+        <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
+          <li class="p-2" data-te-nav-item-ref>
+            <a class="text-white opacity-60 hover:opacity-80 focus:opacity-80" href="#" data-te-nav-link-ref
+              routerLink="/signin">
+              signIn
+            </a>
+          </li>
+          <li class="p-2" data-te-nav-item-ref>
+            <a class="text-white opacity-60 hover:opacity-80 focus:opacity-80" href="#" data-te-nav-link-ref
+              routerLink="/signup">
+              signUp
+            </a>
+          </li>
+        </ng-container>
+        <ng-template #loggedIn>
+          <li class="nav-item">
+            <a class="p-0 text-white opacity-60 hover:opacity-80 focus:opacity-80" data-te-nav-link-ref
+              routerLink="/signin" (click)="authService.logOut()">
+              log out
+            </a>
+          </li>
+        </ng-template>
+      </ul>
+    </div>
+    <!-- Right elements -->
+  </div>
+</nav>
+
+
+
+<div class="container mx-auto m-3">
+  <router-outlet></router-outlet>
+</div>
